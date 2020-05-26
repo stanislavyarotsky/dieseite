@@ -16,7 +16,7 @@
 	<!-- NAVIGATION-->
 	<nav class="navbar px-lg-5 position-fixed navbar-trans navbar-expand-lg navbar-dark justify-content-between w-100">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="#home"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt=""></a>
+			<a class="navbar-brand" href="<?php echo get_home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt=""></a>
 			<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span id="toggle-icon">
 					<span class="block block_1"></span>
@@ -26,26 +26,6 @@
 			</button>
 		</div>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<!-- <ul class="nav navbar-nav ml-auto">
-				<li class="nav-item mr-lg-3">
-					<a class="nav-link active" href="#home">Start</a>
-				</li>
-				<li class="nav-item mr-lg-3">
-					<a class="nav-link" href="#was">Was</a>
-				</li>
-				<li class="nav-item mr-lg-3">
-					<a class="nav-link" href="#werke">Werke</a>
-				</li>
-				<li class="nav-item mr-lg-3">
-					<a class="nav-link" href="#wir">Wir</a>
-				</li>
-				<li class="nav-item mr-lg-3">
-					<a class="nav-link" href="#warum">Warum</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#kontakt">Kontakt</a>
-				</li>
-			</ul> -->
 			<?php
 			$args = array(
 				'theme_location'  => 'top',

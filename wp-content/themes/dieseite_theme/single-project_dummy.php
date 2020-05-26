@@ -1,5 +1,7 @@
-<?php //Template Name: Project Dummy
-get_header(); ?>
+<?php 
+//Template Name: Project Dummy
+//Template Post Type: project
+get_header('two'); ?>
 <!--HOME-->
 <div id="home" class="parallax-window" data-parallax="scroll" data-image-src="https://arztpraxis-tettenborn.de/wp-content/uploads/2019/02/MG_0537_sch-Ring-Uhr_1.jpg">
     <div class="h-100">
