@@ -25,7 +25,6 @@ function diesiete_scripts()
 	wp_enqueue_script('diesiete-typeit_js', 'https://cdnjs.cloudflare.com/ajax/libs/typeit/5.0.2/typeit.min.js');
 	wp_enqueue_script('diesiete-popper_js', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js');
 	wp_enqueue_script('diesiete-bootstrap_js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js');
-	wp_enqueue_script('diesiete-fontawesome_js', 'https://kit.fontawesome.com/7bad17f09b.js');
 	wp_enqueue_script('diesiete-parallax_js', get_template_directory_uri() . '/assets/js/parallax.js');
 	wp_enqueue_script('diesiete-script_main_js', get_template_directory_uri() . '/assets/js/script_main.js');
 }

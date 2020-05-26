@@ -35,10 +35,5 @@
             );
             wp_nav_menu($args);
             ?>
-            <!-- <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item backToTheHome mr-lg-3">
-                    <a class="nav-link" href="#home">Zurück zur Hauptseite</a>
-                </li>
-            </ul> -->
         </div>
     </nav>
