@@ -1,0 +1,28 @@
+#was {
+    .info-box {
+        box-shadow: var(--shad2);
+        width: 800px;
+        color: var(--dark);
+
+        h3 {
+            color: var(--feuer);
+            margin-bottom: 0.5em;
+        }
+
+        img {
+            width: initial;
+            height: auto;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .info-box {
+        width: 100% !important;
+
+        h3 {
+            font-size: 1.6em;
+        }
+
+    }
+}

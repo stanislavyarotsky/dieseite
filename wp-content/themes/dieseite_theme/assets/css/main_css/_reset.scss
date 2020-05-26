@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-decoration: none !important;
+    outline: 0 !important;
+}
+
+
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+img {
+    display: block;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background: #fff;
+    color: var(--light);
+    position: relative;
+}
+
+p {
+    letter-spacing: 0.05em;
+    line-height: 1.62;
+    font-size: 1em;
+    margin: 0;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+}

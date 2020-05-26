@@ -1,0 +1,47 @@
+//$vars: (brand: #D9C182,
+//    silver: #b1b1b1,
+//    brandDark: #76622b,
+//    brandLight: #fcecc2,
+//    link: #c1c1c1,
+//    light: #f7f4f4,
+//    dark: #232323,
+//    blue: rgba(52, 2, 161, 1),
+//    grayDark: #454545,
+//    redCold: #c92353,
+//    btn: #232323,
+//    had1: 0px 2px 7px rgba(21, 21, 51, 0.15),
+//    shad2: 0px 3px 12px rgba(131, 131, 154, 0.1),
+//);
+//
+//:root {
+//
+//    @each $property,
+//    $value in $vars {
+//        --#{$property}: #{$value};
+//    }
+//}
+
+$vars: (brand: #D9C182,
+    silver: #b1b1b1,
+    brandDark: #76622b,
+    brandLight: #fcecc2,
+    link: #c1c1c1,
+    light: #f3f3e7,
+    dark: #232323,
+    blue: rgba(52, 2, 161, 1),
+    grayDark: #454545,
+    redCold: #c92353,
+    btn: #232323,
+    shad1: 0px 2px 7px rgba(21, 21, 51, 0.15),
+    shad2: 0px 3px 12px rgba(131, 131, 154, 0.1),
+    eis: #2D73DD,
+    feuer: #de0845
+);
+
+:root {
+
+    @each $property,
+    $value in $vars {
+        --#{$property}: #{$value};
+    }
+}
