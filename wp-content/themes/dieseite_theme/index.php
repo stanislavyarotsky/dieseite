@@ -122,7 +122,7 @@ endif; ?>
                         </a>
                 <?php endwhile;
                 endif; ?>
-                <!-- <div class="read-more-content mt-3">
+                <div class="read-more-content mt-3">
 					<div class="d-flex flex-column align-items-center">
 						<div class="d-flex align-self-center justify-content-center">
 							<button class="btn active" onclick="filterSelection('all')">Alle</button>
@@ -163,7 +163,7 @@ endif; ?>
 						</a>
 					</div>
 
-				</div> -->
+				</div>
                 <!--read more content-->
             </div>
             <!--flex-column-wrap-->
