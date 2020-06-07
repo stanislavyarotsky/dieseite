@@ -222,15 +222,15 @@ h4 {
   background: rgba(1, 1, 1, 0.9);
   box-shadow: var(--shad1);
   color: var(--brand) !important; }
-  .navbar .nav-link {
+  .navbar a {
     color: #c1c1c1 !important;
     font-weight: 600;
     transition: 0.3s; }
-    .navbar .nav-link:hover {
+    .navbar a:hover {
       color: var(--eis) !important; }
-    .navbar .nav-link.active {
+    .navbar a.active {
       color: var(--eis) !important; }
-    .navbar .nav-link .navbar-brand .colored {
+    .navbar a .navbar-brand .colored {
       color: rgba(52, 2, 161, 0.9); }
   .navbar .navbar-brand {
     width: 150px; }
@@ -380,7 +380,8 @@ span.eye {
   height: 80vh;
   min-height: 400px;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  display: none; }
   #home h1 {
     color: white;
     text-align: center;
