@@ -51,7 +51,7 @@ window.addEventListener('load', () => {
     window.addEventListener('scroll', () => {
         let wpyo = window.pageYOffset;
 
-        if (wpyo > 200 && bool === false) {
+        if (wpyo > 500 && bool === false) {
             nav.classList.remove('active');
             bool = true;
         } else if (wpyo < 200 && bool === true) {
@@ -60,13 +60,13 @@ window.addEventListener('load', () => {
         }
     });
 
-    div.addEventListener('mouseover', (e) => {
+    nav.addEventListener('mouseover', (e) => {
         if (bool === true) {
             nav.classList.add('active');
         }
     });
 
-    div.addEventListener('mouseleave', (e) => {
+    nav.addEventListener('mouseleave', (e) => {
         if (bool === true) {
             nav.classList.remove('active');
         }

@@ -2,11 +2,14 @@
 
 .navbar {
     z-index: 3;
-    background: rgba(1, 1, 1, 0.3);
+    background: rgba(1, 1, 1, 0.6);
     box-shadow: var(--shad1);
     color: var(--brand) !important;
+    transition: ease-in-out 0.45s;
+    height: 60px;
     &.active {
         background: rgba(1, 1, 1, 0.9);
+        height: 70px;
     }
     a {
         color: #c1c1c1 !important;
