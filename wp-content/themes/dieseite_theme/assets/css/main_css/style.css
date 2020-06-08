@@ -382,8 +382,7 @@ span.eye {
   height: 80vh;
   min-height: 400px;
   position: relative;
-  overflow: hidden;
-  display: none; }
+  overflow: hidden; }
   #home h1 {
     color: white;
     text-align: center;
