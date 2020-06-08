@@ -587,7 +587,8 @@ span.eye {
       cursor: pointer; }
     #werke .werk .desc h4 {
       margin: 0;
-      padding: 0; }
+      padding: 0;
+      color: white !important; }
 #werke .read-more-content {
   display: none; }
   #werke .read-more-content.show {

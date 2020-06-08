@@ -1,29 +1,23 @@
 #werke {
-
     .link {
         color: var(--dark);
-
         &:hover {
             color: var(--eis);
         }
     }
-
     .btn {
         font-size: 0.8rem;
         border-radius: 3px 3px 0 0;
         margin: 0 1px;
-
         &.active {
             background: var(--eis) !important;
         }
     }
-
     .werk {
         width: 25%;
         height: calc(25vw);
         position: relative;
         overflow: hidden;
-
         &:after {
             content: "";
             display: block;
@@ -34,20 +28,16 @@
             top: 0;
             left: 0;
         }
-
-        &:hover > .desc {
+        &:hover>.desc {
             transform: translate(-50%, -50%) scale(1.03);
         }
-
         img {
             transition: .3s;
             height: 100%;
         }
-
         img.active {
             filter: grayscale(100%) brightness(0.75);
         }
-
         .desc {
             position: absolute;
             color: white;
@@ -61,50 +51,38 @@
             padding: 1em 2em;
             margin: 0;
             border: 1.2px solid white !important;
-
             &:hover {
                 cursor: pointer;
             }
-
             h4 {
                 margin: 0;
                 padding: 0;
+                color: white !important;
             }
-
         }
     }
-
     //werk
-
     .read-more-content {
         display: none;
-
         &.show {
             display: block;
         }
-
         .werk {
             display: none;
         }
-
         .werk.show {
             display: block;
         }
-
         .closeWerke {
             margin: 1em auto 0 auto;
             display: block;
         }
-
     }
-
     .read-more-toggle {
-
         &.active {
             color: var(--eis) !important;
             border-bottom: 1px solid var(--eis) !important;
         }
-
         i.active {
             transform: rotate(-90deg);
             color: var(--eis);
