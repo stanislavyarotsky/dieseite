@@ -1,5 +1,5 @@
 //smooth scroll
-$('.nav-item a').click(function(e) {
+$('.nav-item a').click(function (e) {
     console.log('test');
     //    e.preventDefault();
     $('html,body').animate({
@@ -7,12 +7,39 @@ $('.nav-item a').click(function(e) {
     }, 1800);
 });
 
-//scrollspy
-$('body').scrollspy({
-    target: "#menu-menu-1",
-    offset: 50
+//scrollSpy function
+function scrollSpy() {
+    var sections = ['home', 'was', 'werke', 'wir', 'warum', 'kontakt'];
+    var current;
+
+    for (var i = 0; i < sections.length; i++) {
+        if ($('#' + sections[i]).offset().top <= $(window).scrollTop()) {
+            current = sections[i];
+        }
+    }
+
+    $("nav a[href='#" + current + "']").addClass('active');
+    $("nav a").not("a[href='#" + current + "']").removeClass('active');
+}
+
+// smooth scrolling navigation
+$("nav a").click(function () {
+    var target = $(this).attr("href");
+    $("body, html").animate({
+        scrollTop: $(target).offset().top
+    }, 300);
+    return false;
 });
 
+//scrollSpy call
+$(document).ready(function () {
+    scrollSpy();
+});
+
+$(window).scroll(function () {
+    scrollSpy();
+});
+//end scrollSpy function
 //$(function () {
 //    $('link').click(function () {
 //        let speed = 91000;
@@ -76,8 +103,8 @@ window.addEventListener('load', () => {
 
 //parallax anm mode fx
 window.addEventListener('load', () => {
-    $(window).scroll(function() {
-        $(".anm_mod").each(function() {
+    $(window).scroll(function () {
+        $(".anm_mod").each(function () {
             const position = $(this).offset().top;
             const scroll = $(window).scrollTop();
             const windowHeight = $(window).height();
@@ -94,7 +121,7 @@ window.addEventListener('load', () => {
 /*change navbar color by scrolling*/
 
 window.addEventListener('load', () => {
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         if ($(document).scrollTop() > 2500) {
             $('.navbar').addClass('color-change-1');
         } else {
@@ -102,7 +129,7 @@ window.addEventListener('load', () => {
         }
     });
 
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         if ($(document).scrollTop() > 6000) {
             $('.navbar').addClass('color-change-2');
         } else {
@@ -149,10 +176,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // input text 
 window.addEventListener('load', () => {
-    $('.form-control[placeholder]').focus(function() {
+    $('.form-control[placeholder]').focus(function () {
         $(this).attr('data-text', $(this).attr('placeholder'));
         $(this).attr('placeholder', '');
-    }).blur(function() {
+    }).blur(function () {
         $(this).attr('placeholder', $(this).attr('data-text'));
     })
 })
@@ -248,12 +275,12 @@ window.addEventListener('load', () => {
     }
 
     //ADD TOGGLE CLASS
-    Activator.prototype.toggle = function() {
+    Activator.prototype.toggle = function () {
         this.item.classList.toggle('active');
     }
 
     //SWITCH ADDED CLASS
-    Activator.prototype.switch = function() {
+    Activator.prototype.switch = function () {
         if (this.current.length > 0) {
             this.current[0].className = this.current[0].className.replace(" active", "");
         }
@@ -261,12 +288,12 @@ window.addEventListener('load', () => {
     }
 
     //JUST ADD CLASS
-    Activator.prototype.add = function() {
+    Activator.prototype.add = function () {
         this.item.classList.add('active')
     }
 
     //JUST REMOVE CLASS
-    Activator.prototype.remove = function() {
+    Activator.prototype.remove = function () {
         this.item.classList.remove('active')
     }
 
