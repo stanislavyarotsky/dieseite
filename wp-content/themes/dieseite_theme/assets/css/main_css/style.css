@@ -679,6 +679,10 @@ span.eye {
   #myForm .form-control.active {
     opacity: 0; }
 
+.form-group span,
+.submit_box input {
+  width: 100%; }
+
 /*FOOTER*/
 .footer {
   width: 100%;
