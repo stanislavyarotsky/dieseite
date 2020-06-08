@@ -6,37 +6,36 @@
     font-weight: 500;
     padding: 30px 15px;
     box-shadow: var(--shad2);
-
+    .btn {
+        background-color: var(--btn);
+        color: white;
+    }
     textarea {
         min-height: 220px;
     }
-
     input::placeholder,
     textarea::placeholder {
         color: var(--link);
     }
-
     input,
     textarea {
         color: black;
         border: 1px solid var(--light) !important;
     }
-
     .col-form-label:first-child {
         padding-top: 0;
     }
-
-    .input-group > .custom-file,
-    .input-group > .custom-select,
-    .input-group > .form-control,
-    .input-group > .form-control-plaintext {
+    .input-group>.custom-file,
+    .input-group>.custom-select,
+    .input-group>.form-control,
+    .input-group>.form-control-plaintext {
         background: var(--light);
     }
-
     .form-control.active {
         opacity: 0;
     }
 }
+
 
 /*FOOTER*/
 
@@ -44,7 +43,6 @@
     width: 100%;
     height: 100px;
     background: #000;
-
     .link {
         margin: 0 0.5em 0 0.5em !important;
     }
