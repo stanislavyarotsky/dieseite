@@ -219,9 +219,11 @@ h4 {
 /*MAIN NAVIGATIN*/
 .navbar {
   z-index: 3;
-  background: rgba(1, 1, 1, 0.9);
+  background: rgba(1, 1, 1, 0.3);
   box-shadow: var(--shad1);
   color: var(--brand) !important; }
+  .navbar.active {
+    background: rgba(1, 1, 1, 0.9); }
   .navbar a {
     color: #c1c1c1 !important;
     font-weight: 600;
@@ -380,8 +382,7 @@ span.eye {
   height: 80vh;
   min-height: 400px;
   position: relative;
-  overflow: hidden;
-  display: none; }
+  overflow: hidden; }
   #home h1 {
     color: white;
     text-align: center;
