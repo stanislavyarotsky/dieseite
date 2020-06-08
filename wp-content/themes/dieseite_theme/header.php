@@ -34,7 +34,7 @@
 				'fallback_cb'     => 'wp_page_menu',
 				'depth'           => 0,
 				'walker'          => '',
-				'add_li_class'  => 'nav-item mr-lg-3'
+				'add_li_class'  => 'nav-item mr-lg-4'
 			);
 			wp_nav_menu($args);
 			?>
