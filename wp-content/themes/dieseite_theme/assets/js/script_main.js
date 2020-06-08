@@ -1,5 +1,5 @@
 //smooth scroll
-$('.nav-item a').click(function (e) {
+$('.nav-item a').click(function(e) {
     console.log('test');
     //    e.preventDefault();
     $('html,body').animate({
@@ -23,7 +23,7 @@ function scrollSpy() {
 }
 
 // smooth scrolling navigation
-$("nav a").click(function () {
+$("nav a").click(function() {
     var target = $(this).attr("href");
     $("body, html").animate({
         scrollTop: $(target).offset().top
@@ -32,11 +32,11 @@ $("nav a").click(function () {
 });
 
 //scrollSpy call
-$(document).ready(function () {
+$(document).ready(function() {
     scrollSpy();
 });
 
-$(window).scroll(function () {
+$(window).scroll(function() {
     scrollSpy();
 });
 //end scrollSpy function
@@ -52,6 +52,12 @@ $(window).scroll(function () {
 //        return false;
 //    });
 //});
+
+//fix contact btn
+window.addEventListener('load', () => {
+    let btn = document.querySelector('.submit_box input');
+    btn.classList.add('btn');
+})
 
 //smart navbar animation
 window.addEventListener('load', () => {
@@ -103,8 +109,8 @@ window.addEventListener('load', () => {
 
 //parallax anm mode fx
 window.addEventListener('load', () => {
-    $(window).scroll(function () {
-        $(".anm_mod").each(function () {
+    $(window).scroll(function() {
+        $(".anm_mod").each(function() {
             const position = $(this).offset().top;
             const scroll = $(window).scrollTop();
             const windowHeight = $(window).height();
@@ -121,7 +127,7 @@ window.addEventListener('load', () => {
 /*change navbar color by scrolling*/
 
 window.addEventListener('load', () => {
-    $(window).scroll(function () {
+    $(window).scroll(function() {
         if ($(document).scrollTop() > 2500) {
             $('.navbar').addClass('color-change-1');
         } else {
@@ -129,7 +135,7 @@ window.addEventListener('load', () => {
         }
     });
 
-    $(window).scroll(function () {
+    $(window).scroll(function() {
         if ($(document).scrollTop() > 6000) {
             $('.navbar').addClass('color-change-2');
         } else {
@@ -176,10 +182,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // input text 
 window.addEventListener('load', () => {
-    $('.form-control[placeholder]').focus(function () {
+    $('.form-control[placeholder]').focus(function() {
         $(this).attr('data-text', $(this).attr('placeholder'));
         $(this).attr('placeholder', '');
-    }).blur(function () {
+    }).blur(function() {
         $(this).attr('placeholder', $(this).attr('data-text'));
     })
 })
@@ -275,12 +281,12 @@ window.addEventListener('load', () => {
     }
 
     //ADD TOGGLE CLASS
-    Activator.prototype.toggle = function () {
+    Activator.prototype.toggle = function() {
         this.item.classList.toggle('active');
     }
 
     //SWITCH ADDED CLASS
-    Activator.prototype.switch = function () {
+    Activator.prototype.switch = function() {
         if (this.current.length > 0) {
             this.current[0].className = this.current[0].className.replace(" active", "");
         }
@@ -288,12 +294,12 @@ window.addEventListener('load', () => {
     }
 
     //JUST ADD CLASS
-    Activator.prototype.add = function () {
+    Activator.prototype.add = function() {
         this.item.classList.add('active')
     }
 
     //JUST REMOVE CLASS
-    Activator.prototype.remove = function () {
+    Activator.prototype.remove = function() {
         this.item.classList.remove('active')
     }
 
