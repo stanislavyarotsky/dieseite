@@ -18,17 +18,16 @@ function diesiete_scripts()
 	wp_enqueue_style('diesiete-custom_style', get_template_directory_uri() . '/assets/css/main_css/style.css');
 	wp_style_add_data('diesiete-style', 'rtl', 'replace');
 	wp_register_script('diesiete-jquery_cdn', 'https://code.jquery.com/jquery-3.4.1.min.js');
-	
+
 	wp_enqueue_script('diesiete-jquery_cdn');
 	wp_enqueue_script('diesiete-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
 	wp_enqueue_script('diesiete-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), _S_VERSION, true);
-	wp_enqueue_script('diesiete-fontawesome_js', 'https://kit.fontawesome.com/7bad17f09b.js');
-	wp_enqueue_script('diesiete-typeit_js', 'https://cdnjs.cloudflare.com/ajax/libs/typeit/5.0.2/typeit.min.js');
-	wp_enqueue_script('diesiete-popper_js', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js');
-	wp_enqueue_script('diesiete-bootstrap_js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js');
-	wp_enqueue_script('diesiete-parallax_js', get_template_directory_uri() . '/assets/js/parallax.js');
-	wp_enqueue_script('diesiete-script_main_js', get_template_directory_uri() . '/assets/js/script_main.js');
-	
+	wp_enqueue_script('diesiete-fontawesome_js', 'https://kit.fontawesome.com/7bad17f09b.js', array('diesiete-jquery_cdn'), null, true);
+	wp_enqueue_script('diesiete-typeit_js', 'https://cdnjs.cloudflare.com/ajax/libs/typeit/5.0.2/typeit.min.js', array('diesiete-jquery_cdn'), null, true);
+	wp_enqueue_script('diesiete-popper_js', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', array('diesiete-jquery_cdn'), null, true);
+	wp_enqueue_script('diesiete-bootstrap_js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array('diesiete-jquery_cdn'), null, true);
+	wp_enqueue_script('diesiete-parallax_js', get_template_directory_uri() . '/assets/js/parallax.js', array('diesiete-jquery_cdn'), null, true);
+	wp_enqueue_script('diesiete-script_main_js', get_template_directory_uri() . '/assets/js/script_main.js', array('diesiete-jquery_cdn'), null, true);
 }
 function diesiete_menu()
 {
