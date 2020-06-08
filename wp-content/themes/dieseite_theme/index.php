@@ -182,7 +182,7 @@ endif; ?>
                             <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
                                 <div class="carousel-inner">
                                     <?php if (have_rows('about_us_slider')) : while (have_rows('about_us_slider')) : the_row(); ?>
-                                            <div class="carousel-item" data-interval="4000">
+                                            <div class="carousel-item <?php the_sub_field('about_us_slider_active');?>" data-interval="4000">
                                                 <img src="<?php the_sub_field('about_us_slider_image'); ?>" class="d-block w-100" alt="...">
                                                 <div class="carousel-caption d-none d-md-block">
                                                     <h5><?php the_sub_field('about_us_slider_name'); ?></h5>
