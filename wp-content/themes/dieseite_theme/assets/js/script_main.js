@@ -1,5 +1,6 @@
 //smooth scroll
-$(".nav-link").click(function (e) {
+$('.nav-item a').click(function(e) {
+    console.log('test');
     //    e.preventDefault();
     $('html,body').animate({
         scrollTop: $(this.hash).offset().top
@@ -8,7 +9,7 @@ $(".nav-link").click(function (e) {
 
 //scrollspy
 $('body').scrollspy({
-    target: ".navbar",
+    target: "#menu-menu-1",
     offset: 50
 });
 
@@ -25,11 +26,58 @@ $('body').scrollspy({
 //    });
 //});
 
+//smart navbar animation
+window.addEventListener('load', () => {
+    let nav = document.querySelector('.navbar');
+    let links = document.querySelectorAll('.navbar .nav-item a');
+    let bool = false;
+
+    links.forEach((l) => {
+        l.addEventListener('click', prom);
+    });
+
+    function prom() {
+        let promise = new Promise((resolve, reject) => {
+            bool = true;
+            setTimeout(() => {
+                resolve(bool)
+            }, 1000)
+        });
+        promise.then((bool) => {
+            bool = false;
+        })
+    }
+
+    window.addEventListener('scroll', () => {
+        let wpyo = window.pageYOffset;
+
+        if (wpyo > 200 && bool === false) {
+            nav.classList.remove('active');
+            bool = true;
+        } else if (wpyo < 200 && bool === true) {
+            nav.classList.add('active');
+            bool = false;
+        }
+    });
+
+    div.addEventListener('mouseover', (e) => {
+        if (bool === true) {
+            nav.classList.add('active');
+        }
+    });
+
+    div.addEventListener('mouseleave', (e) => {
+        if (bool === true) {
+            nav.classList.remove('active');
+        }
+    });
+})
+
 
 //parallax anm mode fx
 window.addEventListener('load', () => {
-    $(window).scroll(function () {
-        $(".anm_mod").each(function () {
+    $(window).scroll(function() {
+        $(".anm_mod").each(function() {
             const position = $(this).offset().top;
             const scroll = $(window).scrollTop();
             const windowHeight = $(window).height();
@@ -46,7 +94,7 @@ window.addEventListener('load', () => {
 /*change navbar color by scrolling*/
 
 window.addEventListener('load', () => {
-    $(window).scroll(function () {
+    $(window).scroll(function() {
         if ($(document).scrollTop() > 2500) {
             $('.navbar').addClass('color-change-1');
         } else {
@@ -54,7 +102,7 @@ window.addEventListener('load', () => {
         }
     });
 
-    $(window).scroll(function () {
+    $(window).scroll(function() {
         if ($(document).scrollTop() > 6000) {
             $('.navbar').addClass('color-change-2');
         } else {
@@ -101,10 +149,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // input text 
 window.addEventListener('load', () => {
-    $('.form-control[placeholder]').focus(function () {
+    $('.form-control[placeholder]').focus(function() {
         $(this).attr('data-text', $(this).attr('placeholder'));
         $(this).attr('placeholder', '');
-    }).blur(function () {
+    }).blur(function() {
         $(this).attr('placeholder', $(this).attr('data-text'));
     })
 })
@@ -153,12 +201,12 @@ function w3RemoveClass(element, name) {
 window.addEventListener('load', () => {
     //nav links
     let navbarCollapse = document.querySelector('.navbar-collapse');
-    let links1 = document.querySelectorAll('.nav .nav-link');
+    let links1 = document.querySelectorAll('.nav .nav-item a');
     links1.forEach((link, index) => {
         link.addEventListener('click', (e) => {
             navbarCollapse.classList.remove('show');
             toggleIcon.classList.remove('active')
-            let current = document.querySelectorAll('.nav-link.active');
+            let current = document.querySelectorAll('.nav-item a.active');
             let act = new Activator(link, index, current);
             //CHOOSE PROPER FUNC
             act.switch();
@@ -198,7 +246,7 @@ window.addEventListener('load', () => {
         this.current = current;
         this.index = index;
     }
-    
+
     //ADD TOGGLE CLASS
     Activator.prototype.toggle = function() {
         this.item.classList.toggle('active');
@@ -245,6 +293,6 @@ window.addEventListener('load', () => {
 })
 
 
-let btnContact = document.querySelector('#myForm .btn').addEventListener('click', (e) => {
-    e.preventDefault();
-});
+// let btnContact = document.querySelector('#myForm .btn').addEventListener('click', (e) => {
+//     e.preventDefault();
+// });
