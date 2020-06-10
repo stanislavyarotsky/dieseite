@@ -117,53 +117,42 @@ endif; ?>
 
                 </div>
                 <!--flex-wrap-->
-                <?php if (have_rows('portfolio_link')) : while (have_rows('portfolio_link')) : the_row(); ?>
-                        <a href="<?php the_sub_field('portfolio_link_link'); ?>" class="read-more-toggle link align-self-center mt-5"><?php the_sub_field('portfolio_link_title'); ?><i class="ml-1 fas fa-arrow-alt-circle-left"></i>
-                        </a>
+                <?php if (have_rows('portfolio_tab')) : while (have_rows('portfolio_tab')) : the_row(); ?>
+                        <button class="read-more-toggle link align-self-center mt-5"><?php the_sub_field('portfolio_tab_title'); ?><i class="ml-1 fas fa-arrow-alt-circle-left"></i>
+                        </button>
+
+                        <div class="read-more-content mt-3">
+                            <div class="d-flex flex-column align-items-center">
+                                <div class="d-flex align-self-center justify-content-center">
+                                    <button class="btn active" onclick="filterSelection('all')">Alle</button>
+                                    <?php if (have_rows('tabs_items')) : while (have_rows('tabs_items')) : the_row(); ?>
+                                            <button class="btn" onclick="filterSelection('<?php the_sub_field('tabs_items_id'); ?>')"><?php the_sub_field('tabs_items_title'); ?></button>
+                                    <?php endwhile;
+                                    endif; ?>
+                                </div>
+                                <div class="d-flex flex-wrap w-100">
+                                    <?php if (have_rows('tabs_items')) : while (have_rows('tabs_items')) : the_row(); ?>
+                                            <?php if (have_rows('tabs_project_item')) : while (have_rows('tabs_project_item')) : the_row(); ?>
+                                                    <a href="<?php the_sub_field('tabs_project_item_link'); ?>" class="werk <?php the_sub_field('tabs_project_item_id'); ?>">
+                                                        <div class="desc">
+                                                            <h4><?php the_sub_field('tabs_project_item_title'); ?></h4>
+                                                        </div>
+                                                        <img src="<?php the_sub_field('tabs_project_item_image'); ?>" alt="">
+                                                    </a>
+                                            <?php endwhile;
+                                            endif; ?>
+                                    <?php endwhile;
+                                    endif; ?>
+                                </div>
+                                <a href="#werke" class="mt-3 link closeWerke">
+                                    Alle Projekte schließen
+                                    <i class="ml-1 fas fa-times-circle"></i>
+                                </a>
+                            </div>
+
+                        </div>
                 <?php endwhile;
                 endif; ?>
-                <div class="read-more-content mt-3">
-					<div class="d-flex flex-column align-items-center">
-						<div class="d-flex align-self-center justify-content-center">
-							<button class="btn active" onclick="filterSelection('all')">Alle</button>
-							<button class="btn" onclick="filterSelection('logo')">Web-Design</button>
-							<button class="btn" onclick="filterSelection('uxui')">Logo</button>
-							<button class="btn" onclick="filterSelection('wordpress')">Wordpress</button>
-						</div>
-						<div class="d-flex flex-wrap w-100">
-							<a href="projekt_dummy.html" class="werk all">
-								<div class="desc">
-									<h4>Projektname Jahr</h4>
-								</div>
-								<img src="https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
-							</a>
-							<a href="projekt_dummy.html" class="werk logo">
-								<div class="desc">
-									<h4>Projektname Jahr</h4>
-								</div>
-								<img src="https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
-							</a>
-							<a href="projekt_dummy.html" class="werk uxui">
-								<div class="desc">
-									<h4>Projektname Jahr</h4>
-								</div>
-								<img src="https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
-							</a>
-							<a href="projekt_dummy.html" class="werk wordpress">
-								<div class="desc">
-									<h4>Projektname Jahr</h4>
-								</div>
-								<img src="https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
-							</a>
-
-						</div>
-						<a href="#werke" class="mt-3 link closeWerke">
-							Alle Projekte schließen
-							<i class="ml-1 fas fa-times-circle"></i>
-						</a>
-					</div>
-
-				</div>
                 <!--read more content-->
             </div>
             <!--flex-column-wrap-->
@@ -182,7 +171,7 @@ endif; ?>
                             <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
                                 <div class="carousel-inner">
                                     <?php if (have_rows('about_us_slider')) : while (have_rows('about_us_slider')) : the_row(); ?>
-                                            <div class="carousel-item <?php the_sub_field('about_us_slider_active');?>" data-interval="4000">
+                                            <div class="carousel-item <?php the_sub_field('about_us_slider_active'); ?>" data-interval="4000">
                                                 <img src="<?php the_sub_field('about_us_slider_image'); ?>" class="d-block w-100" alt="...">
                                                 <div class="carousel-caption d-none d-md-block">
                                                     <h5><?php the_sub_field('about_us_slider_name'); ?></h5>
