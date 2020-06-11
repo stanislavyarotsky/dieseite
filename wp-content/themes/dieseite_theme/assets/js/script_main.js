@@ -3,13 +3,22 @@ $('.nav-item a').click(function(e) {
     console.log('test');
     //    e.preventDefault();
     $('html,body').animate({
-        scrollTop: $(this.hash).offset().top
+        scrollTop: $(this.hash)
+            .offset()
+            .top
     }, 1800);
 });
 
 //scrollSpy function
 function scrollSpy() {
-    var sections = ['home', 'was', 'werke', 'wir', 'warum', 'kontakt'];
+    var sections = [
+        'home',
+        'was',
+        'werke',
+        'wir',
+        'warum',
+        'kontakt'
+    ];
     var current;
 
     for (var i = 0; i < sections.length; i++) {
@@ -19,14 +28,18 @@ function scrollSpy() {
     }
 
     $("nav a[href='#" + current + "']").addClass('active');
-    $("nav a").not("a[href='#" + current + "']").removeClass('active');
+    $("nav a")
+        .not("a[href='#" + current + "']")
+        .removeClass('active');
 }
 
 // smooth scrolling navigation
 $("nav a").click(function() {
     var target = $(this).attr("href");
     $("body, html").animate({
-        scrollTop: $(target).offset().top
+        scrollTop: $(target)
+            .offset()
+            .top
     }, 300);
     return false;
 });
@@ -39,24 +52,75 @@ $(document).ready(function() {
 $(window).scroll(function() {
     scrollSpy();
 });
-//end scrollSpy function
-//$(function () {
-//    $('link').click(function () {
-//        let speed = 91000;
-//        const href = $(this).attr("href");
-//        const target = $(href == "#" || href == "" ? "html" : href);
-//        const position = target.offset().top;
-//        $("html, body").animate({
-//            scrollTop: position
-//        }, speed, "swing");
-//        return false;
-//    });
-//});
+// end scrollSpy function $(function () {    $('link').click(function () { let
+// speed = 91000;        const href = $(this).attr("href");        const target
+// = $(href == "#" || href == "" ? "html" : href);        const position
+// = target.offset().top;        $("html, body").animate({            scrollTop:
+// position        }, speed, "swing");        return false;    }); });
+// description animation
+
+//ty it animation
+window.addEventListener('load', () => {
+    window.addEventListener('load', () => {
+        $(function() {
+            new TypeIt('.auto-typing', { speed: 45 }).pause(500)
+                // .type('Webauftrito')            .options({                speed: 500
+                // })            .delete(3)            .type('itt ')            .options({
+                // speed: 45            })            .pause(300)            .type('für kleine
+                // und mittlere Unternehmen')            .break()            .pause(500)
+                // .options({                speed: 70            })
+                .pause(200)
+                .type('Web-, Brand- und App-Design, ')
+                .break()
+                .pause(300)
+                .type('Webentwicklunk')
+                .delete(2)
+                .type('ng, ')
+                .break()
+                .pause(300)
+                .type('Internet Marketing')
+                .options({ speed: 100 })
+        });
+    })
+})
+
+window.addEventListener('load', () => {
+    let boxes = document.querySelectorAll('.description .box');
+
+    let x = 0;
+    let func = () => {
+        boxes.forEach((box) => {
+            let boxT = Math.floor(box.getBoundingClientRect().top);
+            let boxB = Math.floor(box.getBoundingClientRect().bottom);
+            let winH = window.innerHeight;
+
+            if (boxT < winH - 100) {
+                setTimeout(() => {
+                    box
+                        .classList
+                        .add('active');
+                }, x);
+                x = x + 400;
+            } else if (boxT > winH) {
+                box
+                    .classList
+                    .remove('active');
+            }
+        })
+        x = 0;
+    };
+
+    setTimeout(() => {
+        func();
+    }, 2000);
+})
 
 //fix contact btn
 window.addEventListener('load', () => {
     let btn = document.querySelector('.submit_box input');
-    btn.classList.add('btn');
+    btn
+        .classList
+        .add('btn');
 })
 
 //smart navbar animation
@@ -85,33 +149,42 @@ window.addEventListener('load', () => {
         let wpyo = window.pageYOffset;
 
         if (wpyo > 500 && bool === false) {
-            nav.classList.remove('active');
+            nav
+                .classList
+                .remove('active');
             bool = true;
         } else if (wpyo < 200 && bool === true) {
-            nav.classList.add('active');
+            nav
+                .classList
+                .add('active');
             bool = false;
         }
     });
 
     nav.addEventListener('mouseover', (e) => {
         if (bool === true) {
-            nav.classList.add('active');
+            nav
+                .classList
+                .add('active');
         }
     });
 
     nav.addEventListener('mouseleave', (e) => {
         if (bool === true) {
-            nav.classList.remove('active');
+            nav
+                .classList
+                .remove('active');
         }
     });
 })
-
 
 //parallax anm mode fx
 window.addEventListener('load', () => {
     $(window).scroll(function() {
         $(".anm_mod").each(function() {
-            const position = $(this).offset().top;
+            const position = $(this)
+                .offset()
+                .top;
             const scroll = $(window).scrollTop();
             const windowHeight = $(window).height();
             if (scroll > position - (windowHeight + 300)) {
@@ -144,7 +217,6 @@ window.addEventListener('load', () => {
     });
 })
 
-
 //style werke
 window.addEventListener('load', () => {
     //gal
@@ -154,10 +226,16 @@ window.addEventListener('load', () => {
     imgs.forEach((img) => {
         descs.forEach((desc) => {
             desc.addEventListener('mouseover', (e) => {
-                desc.nextElementSibling.classList.add('active')
+                desc
+                    .nextElementSibling
+                    .classList
+                    .add('active')
             })
             desc.addEventListener('mouseleave', (e) => {
-                desc.nextElementSibling.classList.remove('active')
+                desc
+                    .nextElementSibling
+                    .classList
+                    .remove('active')
             })
         })
     })
@@ -168,48 +246,71 @@ document.addEventListener('DOMContentLoaded', () => {
     let showAllPojects = document.querySelector('.read-more-toggle');
     let closeAllProjects = document.querySelector('.closeWerke');
     showAllPojects.addEventListener('click', () => {
-        showAllPojects.nextElementSibling.classList.toggle('show');
-        showAllPojects.classList.toggle('active');
-        showAllPojects.lastElementChild.classList.toggle('active');
+        showAllPojects
+            .nextElementSibling
+            .classList
+            .toggle('show');
+        showAllPojects
+            .classList
+            .toggle('active');
+        showAllPojects
+            .lastElementChild
+            .classList
+            .toggle('active');
     });
     closeAllProjects.addEventListener('click', () => {
-        closeAllProjects.classList.remove('active');
-        closeAllProjects.closest('.read-more-content').classList.remove('show');
-        showAllPojects.classList.remove('active');
-        showAllPojects.lastElementChild.classList.remove('active');
+        closeAllProjects
+            .classList
+            .remove('active');
+        closeAllProjects
+            .closest('.read-more-content')
+            .classList
+            .remove('show');
+        showAllPojects
+            .classList
+            .remove('active');
+        showAllPojects
+            .lastElementChild
+            .classList
+            .remove('active');
     })
 })
 
-// input text 
+// input text
 window.addEventListener('load', () => {
-    $('.form-control[placeholder]').focus(function() {
-        $(this).attr('data-text', $(this).attr('placeholder'));
-        $(this).attr('placeholder', '');
-    }).blur(function() {
-        $(this).attr('placeholder', $(this).attr('data-text'));
-    })
+    $('.form-control[placeholder]')
+        .focus(function() {
+            $(this).attr('data-text', $(this).attr('placeholder'));
+            $(this).attr('placeholder', '');
+        })
+        .blur(function() {
+            $(this).attr('placeholder', $(this).attr('data-text'));
+        })
 })
 
-
-//type it
-
-
-//filter gallery
+//type it filter gallery
 filterSelection("all")
 
 function filterSelection(c) {
-    let x, i;
+    let x,
+        i;
     x = document.getElementsByClassName("werk");
-    if (c == "all") c = "";
+    if (c == "all")
+        c = "";
     for (i = 0; i < x.length; i++) {
         w3RemoveClass(x[i], "show");
-        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1)
+            w3AddClass(x[i], "show");
     }
 }
 
 function w3AddClass(element, name) {
-    let i, arr1, arr2;
-    arr1 = element.className.split(" ");
+    let i,
+        arr1,
+        arr2;
+    arr1 = element
+        .className
+        .split(" ");
     arr2 = name.split(" ");
     for (i = 0; i < arr2.length; i++) {
         if (arr1.indexOf(arr2[i]) == -1) {
@@ -219,8 +320,12 @@ function w3AddClass(element, name) {
 }
 
 function w3RemoveClass(element, name) {
-    let i, arr1, arr2;
-    arr1 = element.className.split(" ");
+    let i,
+        arr1,
+        arr2;
+    arr1 = element
+        .className
+        .split(" ");
     arr2 = name.split(" ");
     for (i = 0; i < arr2.length; i++) {
         while (arr1.indexOf(arr2[i]) > -1) {
@@ -230,15 +335,19 @@ function w3RemoveClass(element, name) {
     element.className = arr1.join(" ");
 }
 
-//add, toggle, remove 
+//add, toggle, remove
 window.addEventListener('load', () => {
     //nav links
     let navbarCollapse = document.querySelector('.navbar-collapse');
     let links1 = document.querySelectorAll('.nav .nav-item a');
     links1.forEach((link, index) => {
         link.addEventListener('click', (e) => {
-            navbarCollapse.classList.remove('show');
-            toggleIcon.classList.remove('active')
+            navbarCollapse
+                .classList
+                .remove('show');
+            toggleIcon
+                .classList
+                .remove('active')
             let current = document.querySelectorAll('.nav-item a.active');
             let act = new Activator(link, index, current);
             //CHOOSE PROPER FUNC
@@ -271,7 +380,10 @@ window.addEventListener('load', () => {
     }, 3000);
 
     let arrhref = arrow.getAttribute('href');
-    arrhref = arrow.closest('#home').nextElementSibling.getAttribute('id');
+    arrhref = arrow
+        .closest('#home')
+        .nextElementSibling
+        .getAttribute('id');
     arrow.setAttribute('href', "#" + arrhref);
 
     function Activator(item, index, current) {
@@ -282,25 +394,39 @@ window.addEventListener('load', () => {
 
     //ADD TOGGLE CLASS
     Activator.prototype.toggle = function() {
-        this.item.classList.toggle('active');
+        this
+            .item
+            .classList
+            .toggle('active');
     }
 
     //SWITCH ADDED CLASS
     Activator.prototype.switch = function() {
         if (this.current.length > 0) {
-            this.current[0].className = this.current[0].className.replace(" active", "");
+            this
+                .current[0]
+                .className = this
+                .current[0]
+                .className
+                .replace(" active", "");
         }
         this.item.className += " active";
     }
 
     //JUST ADD CLASS
     Activator.prototype.add = function() {
-        this.item.classList.add('active')
+        this
+            .item
+            .classList
+            .add('active')
     }
 
     //JUST REMOVE CLASS
     Activator.prototype.remove = function() {
-        this.item.classList.remove('active')
+        this
+            .item
+            .classList
+            .remove('active')
     }
 
 })
@@ -310,7 +436,9 @@ window.addEventListener('load', () => {
     let h1 = document.querySelector('h1');
     let a = new Promise((resolve, reject) => {
         setTimeout(() => {
-            h1.classList.add('active');
+            h1
+                .classList
+                .add('active');
             resolve(h1);
         }, 1000)
     })
@@ -318,14 +446,14 @@ window.addEventListener('load', () => {
     a.then((h1) => {
         let b = new Promise((resolve, reject) => {
             setTimeout(() => {
-                h1.classList.remove('active');
+                h1
+                    .classList
+                    .remove('active');
                 //myHeader.classList.remove('glue');
             }, 2200);
         })
     });
 })
 
-
-// let btnContact = document.querySelector('#myForm .btn').addEventListener('click', (e) => {
-//     e.preventDefault();
-// });
+// let btnContact = document.querySelector('#myForm
+// .btn').addEventListener('click', (e) => {     e.preventDefault(); });
