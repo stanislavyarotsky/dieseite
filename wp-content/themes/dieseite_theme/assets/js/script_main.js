@@ -56,10 +56,20 @@ $(window).scroll(function() {
 // speed = 91000;        const href = $(this).attr("href");        const target
 // = $(href == "#" || href == "" ? "html" : href);        const position
 // = target.offset().top;        $("html, body").animate({            scrollTop:
-// position        }, speed, "swing");        return false;    }); });
-// description animation type it animation
-window.addEventListener('load', () => {
-    window.addEventListener('load', () => {
+// position        }, speed, "swing");        return false;    }); }); type it
+// animation
+
+window.addEventListener('scroll', () => {
+    let atype = document.querySelectorAll('.auto-typing');
+
+    let atypeT = Math.floor(box.getBoundingClientRect().top);
+    let winH = window.innerHeight;
+
+    if (atypeT < winH - 100) {
+        exe();
+    }
+
+    function exe() {
         $(function() {
             new TypeIt('.auto-typing', { speed: 45 })
                 .pause(200)
@@ -69,9 +79,10 @@ window.addEventListener('load', () => {
                 .options({ speed: 100 })
                 .type('ge senden')
         });
-    })
+    }
 })
 
+// description animation
 window.addEventListener('load', () => {
     let boxes = document.querySelectorAll('.description .box');
 
