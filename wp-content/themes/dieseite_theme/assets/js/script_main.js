@@ -57,29 +57,17 @@ $(window).scroll(function() {
 // = $(href == "#" || href == "" ? "html" : href);        const position
 // = target.offset().top;        $("html, body").animate({            scrollTop:
 // position        }, speed, "swing");        return false;    }); });
-// description animation
-
-//ty it animation
+// description animation type it animation
 window.addEventListener('load', () => {
     window.addEventListener('load', () => {
         $(function() {
-            new TypeIt('.auto-typing', { speed: 45 }).pause(500)
-                // .type('Webauftrito')            .options({                speed: 500
-                // })            .delete(3)            .type('itt ')            .options({
-                // speed: 45            })            .pause(300)            .type('für kleine
-                // und mittlere Unternehmen')            .break()            .pause(500)
-                // .options({                speed: 70            })
+            new TypeIt('.auto-typing', { speed: 45 })
                 .pause(200)
-                .type('Web-, Brand- und App-Design, ')
-                .break()
-                .pause(300)
-                .type('Webentwicklunk')
+                .type('Unverbindliche Anfrafe')
                 .delete(2)
-                .type('ng, ')
-                .break()
                 .pause(300)
-                .type('Internet Marketing')
                 .options({ speed: 100 })
+                .type('ge senden')
         });
     })
 })

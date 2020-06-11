@@ -85,7 +85,7 @@ get_header(); ?>
         <?php if (have_rows('section_was_contact_link')) : while (have_rows('section_was_contact_link')) : the_row(); ?>
         <div
             class="position-relative w-100 d-flex flex-column flex-lg-row justify-content-center mt-5 p-3 active">
-            <h3 class="text-center text-lg-left"><?php the_sub_field('section_was_contact_link_text'); ?></h3>
+            <h3 class="auto-typing text-center text-lg-left"><?php the_sub_field('section_was_contact_link_text'); ?></h3>
             <a class="btn_href btn ml-0 ml-lg-5 mt-1 mt-lg-0" href="#kontakt"><?php the_sub_field('section_was_contact_link_text_button'); ?></a>
         </div>
         <?php endwhile;
