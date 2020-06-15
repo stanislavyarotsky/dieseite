@@ -1,5 +1,5 @@
 //smooth scroll
-$('.nav-item a').click(function(e) {
+$('.nav-item a, .smooth_scroll').click(function(e) {
     console.log('test');
     //    e.preventDefault();
     $('html,body').animate({
@@ -34,7 +34,7 @@ function scrollSpy() {
 }
 
 // smooth scrolling navigation
-$("nav a").click(function() {
+$("nav a, .smooth_scroll").click(function() {
     var target = $(this).attr("href");
     $("body, html").animate({
         scrollTop: $(target)
