@@ -13,45 +13,14 @@ get_header(); ?>
                     <span class="description auto-typing">
                         <?php if (have_rows('description')) : while (have_rows('description')) : the_row(); ?>
                                 <div class="d-flex justify-content-around">
-                                    <div class="box"><?php the_sub_field('description_item');?></div>
+                                    <div class="box"><?php the_sub_field('description_item'); ?></div>
                                 </div>
-                        <?php endwhile; endif; ?>
+                        <?php endwhile;
+                        endif; ?>
                     </span>
                     <a href="#was" class="smooth_scroll nav-link" id="arrow-down">
                         <i class="fa fa-chevron-down"></i>
                     </a>
-                    <?php if (have_rows('first_screen_text_items')) : while (have_rows('first_screen_text_items')) : the_row(); ?>
-                            <script>
-                                //type it
-                                window.addEventListener('load', () => {
-                                            $(function() {
-                                                new
-                                                TypeIt('.auto-typing', {
-                                                        speed: 45
-                                                    })
-                                                    .pause(500) // .type('Webauftrito')
-                                                    .options({
-                                                        // speed: 500  })  .delete(3)  .type('itt ')  .options({
-                                                        speed: 45 // })  .pause(300)  .type('für kleine und mittlere Unternehmen')
-                                                            // .break()  .pause(500)  .options({  speed: 70  }) .pause(200)
-                                                            .type('Web-, Brand- und App-Design, ')
-                                                            .break()
-                                                            .pause(300)
-                                                            .type('Webentwicklunk')
-                                                            .delete(2)
-                                                            .type('ng, ')
-                                                            .break()
-                                                            .pause(300)
-                                                            .type('Internet Marketing')
-                                                            .options({
-                                                                speed: 100
-                                                            })
-                                                    });
-                                            })
-                            </script>
-                    <?php
-                        endwhile;
-                    endif; ?>
                 </div>
             </div>
         </div>
@@ -82,6 +51,16 @@ endif; ?>
                 <?php if (have_rows('section_was_contact_link')) : while (have_rows('section_was_contact_link')) : the_row(); ?>
                         <div class="position-relative w-100 d-flex flex-column flex-lg-row justify-content-center mt-5 p-3 active">
                             <h3 class="auto-typing text-center text-lg-left"><?php the_sub_field('section_was_contact_link_text'); ?></h3>
+                            <script>
+                                window.addEventListener('load', () => {
+                                    $(function() {
+                                        new
+                                        TypeIt('.auto-typing', {
+                                                speed: 45
+                                            });
+                                    });
+                                });
+                            </script>
                             <a class="btn_href smooth_scroll btn ml-0 ml-lg-5 mt-1 mt-lg-0" href="#kontakt"><?php the_sub_field('section_was_contact_link_text_button'); ?></a>
                         </div>
                 <?php endwhile;
