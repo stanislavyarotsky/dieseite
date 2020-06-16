@@ -10,7 +10,7 @@ get_header(); ?>
                     <h1><?php the_sub_field('first_screen_title'); ?><br>
                         <span><?php the_sub_field('first_screen_subtitle'); ?></span>
                     </h1>
-                    <span class="description auto-typing">
+                    <span class="description">
                         <?php if (have_rows('description')) : while (have_rows('description')) : the_row(); ?>
                                 <div class="d-flex justify-content-around">
                                     <div class="box"><?php the_sub_field('description_item'); ?></div>
@@ -52,12 +52,19 @@ endif; ?>
                         <div class="position-relative w-100 d-flex flex-column flex-lg-row justify-content-center mt-5 p-3 active">
                             <h3 class="auto-typing text-center text-lg-left"><?php the_sub_field('section_was_contact_link_text'); ?></h3>
                             <script>
-                                window.addEventListener('load', () => {
-                                    $(function() {
-                                        new
-                                        TypeIt('.auto-typing', {
-                                                speed: 45
+                                var offset = 900;
+                                $(window).scroll(function() {
+                                    var scrolltop = $(this).scrollTop();
+                                    $('.auto-typing').each(function() {
+                                        if (scrolltop >= $(this).offset().top - offset) {
+                                            $(function() {
+                                                new
+                                                TypeIt('.auto-typing', {
+                                                    speed: 45
+                                                });
                                             });
+                                            $(window).off('scroll');
+                                        }
                                     });
                                 });
                             </script>

@@ -59,29 +59,29 @@ $(window).scroll(function() {
 // position        }, speed, "swing");        return false;    }); }); type it
 // animation
 
-window.addEventListener('scroll', () => {
-    let atype = document.querySelectorAll('.auto-typing');
+// window.addEventListener('scroll', () => {
+//     let atype = document.querySelectorAll('.auto-typing');
 
-    let atypeT = Math.floor(box.getBoundingClientRect().top);
-    let winH = window.innerHeight;
+//     let atypeT = Math.floor(box.getBoundingClientRect().top);
+//     let winH = window.innerHeight;
 
-    if (atypeT < winH - 100) {
-        exe();
-    }
+//     if (atypeT < winH - 100) {
+//         exe();
+//     }
 
-    function exe() {
-        $(function() {
-            new TypeIt('.auto-typing', { speed: 45 })
-                .pause(200)
-                .type('Unverbindliche Anfrafe')
-                .delete(2)
-                .pause(300)
-                .options({ speed: 100 })
-                .type('ge senden')
-        });
-    }
-})
-
+    
+// })
+function exe() {
+    $(function() {
+        new TypeIt('.auto-typing', { speed: 45 })
+            .pause(200)
+            .type('Unverbindliche Anfrafe')
+            .delete(2)
+            .pause(300)
+            .options({ speed: 100 })
+            .type('ge senden')
+    });
+}
 // description animation
 window.addEventListener('load', () => {
     let boxes = document.querySelectorAll('.description .box');
