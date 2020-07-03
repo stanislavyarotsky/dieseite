@@ -69,7 +69,7 @@ $(window).scroll(function() {
 //         exe();
 //     }
 
-    
+
 // })
 function exe() {
     $(function() {
@@ -82,37 +82,7 @@ function exe() {
             .type('ge senden')
     });
 }
-// description animation
-window.addEventListener('load', () => {
-    let boxes = document.querySelectorAll('.description .box');
 
-    let x = 0;
-    let func = () => {
-        boxes.forEach((box) => {
-            let boxT = Math.floor(box.getBoundingClientRect().top);
-            let boxB = Math.floor(box.getBoundingClientRect().bottom);
-            let winH = window.innerHeight;
-
-            if (boxT < winH - 100) {
-                setTimeout(() => {
-                    box
-                        .classList
-                        .add('active');
-                }, x);
-                x = x + 400;
-            } else if (boxT > winH) {
-                box
-                    .classList
-                    .remove('active');
-            }
-        })
-        x = 0;
-    };
-
-    setTimeout(() => {
-        func();
-    }, 2000);
-})
 
 //fix contact btn
 window.addEventListener('load', () => {
