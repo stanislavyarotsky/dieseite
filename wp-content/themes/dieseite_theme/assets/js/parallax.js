@@ -6,12 +6,12 @@ window.addEventListener('load', () => {
      */
 
     ;
-    (function ($, window, document, undefined) {
+    (function($, window, document, undefined) {
 
         // Polyfill for requestAnimationFrame
         // via: https://gist.github.com/paulirish/1579671
 
-        (function () {
+        (function() {
             var lastTime = 0;
             var vendors = ['ms', 'moz', 'webkit', 'o'];
             for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
@@ -20,10 +20,10 @@ window.addEventListener('load', () => {
             }
 
             if (!window.requestAnimationFrame)
-                window.requestAnimationFrame = function (callback) {
+                window.requestAnimationFrame = function(callback) {
                     var currTime = new Date().getTime();
                     var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-                    var id = window.setTimeout(function () {
+                    var id = window.setTimeout(function() {
                             callback(currTime + timeToCall);
                         },
                         timeToCall);
@@ -32,7 +32,7 @@ window.addEventListener('load', () => {
                 };
 
             if (!window.cancelAnimationFrame)
-                window.cancelAnimationFrame = function (id) {
+                window.cancelAnimationFrame = function(id) {
                     clearTimeout(id);
                 };
         }());
@@ -137,7 +137,7 @@ window.addEventListener('load', () => {
                 overflow: 'hidden'
             });
 
-            this.$slider.addClass('parallax-slider').one('load', function () {
+            this.$slider.addClass('parallax-slider').one('load', function() {
                 if (!self.naturalHeight || !self.naturalWidth) {
                     self.naturalHeight = this.naturalHeight || this.height || 1;
                     self.naturalWidth = this.naturalWidth || this.width || 1;
@@ -172,7 +172,7 @@ window.addEventListener('load', () => {
             overScrollFix: false,
             mirrorContainer: 'body',
 
-            refresh: function () {
+            refresh: function() {
                 this.boxWidth = this.$element.outerWidth();
                 this.boxHeight = this.$element.outerHeight() + this.bleed * 2;
                 this.boxOffsetTop = this.$element.offset().top - this.bleed;
@@ -222,7 +222,7 @@ window.addEventListener('load', () => {
                 }
             },
 
-            render: function () {
+            render: function() {
                 var scrollTop = Parallax.scrollTop;
                 var scrollLeft = Parallax.scrollLeft;
                 var overScroll = this.overScrollFix ? Parallax.overScroll : 0;
@@ -269,7 +269,7 @@ window.addEventListener('load', () => {
             isFresh: false,
             isBusy: false,
 
-            setup: function () {
+            setup: function() {
                 if (this.isReady) return;
 
                 var self = this;
@@ -277,14 +277,14 @@ window.addEventListener('load', () => {
                 var $doc = $(document),
                     $win = $(window);
 
-                var loadDimensions = function () {
+                var loadDimensions = function() {
                     Parallax.winHeight = $win.height();
                     Parallax.winWidth = $win.width();
                     Parallax.docHeight = $doc.height();
                     Parallax.docWidth = $doc.width();
                 };
 
-                var loadScrollPosition = function () {
+                var loadScrollPosition = function() {
                     var winScrollTop = $win.scrollTop();
                     var scrollTopMax = Parallax.docHeight - Parallax.winHeight;
                     var scrollLeftMax = Parallax.docWidth - Parallax.winWidth;
@@ -293,13 +293,13 @@ window.addEventListener('load', () => {
                     Parallax.overScroll = Math.max(winScrollTop - scrollTopMax, Math.min(winScrollTop, 0));
                 };
 
-                $win.on('resize.px.parallax load.px.parallax', function () {
+                $win.on('resize.px.parallax load.px.parallax', function() {
                         loadDimensions();
                         self.refresh();
                         Parallax.isFresh = false;
                         Parallax.requestRender();
                     })
-                    .on('scroll.px.parallax load.px.parallax', function () {
+                    .on('scroll.px.parallax load.px.parallax', function() {
                         loadScrollPosition();
                         Parallax.requestRender();
                     });
@@ -324,7 +324,7 @@ window.addEventListener('load', () => {
                 frameLoop();
             },
 
-            configure: function (options) {
+            configure: function(options) {
                 if (typeof options == 'object') {
                     delete options.refresh;
                     delete options.render;
@@ -332,26 +332,26 @@ window.addEventListener('load', () => {
                 }
             },
 
-            refresh: function () {
-                $.each(this.sliders, function () {
+            refresh: function() {
+                $.each(this.sliders, function() {
                     this.refresh();
                 });
                 this.isFresh = true;
             },
 
-            render: function () {
+            render: function() {
                 this.isFresh || this.refresh();
-                $.each(this.sliders, function () {
+                $.each(this.sliders, function() {
                     this.render();
                 });
             },
 
-            requestRender: function () {
+            requestRender: function() {
                 var self = this;
                 self.render();
                 self.isBusy = false;
             },
-            destroy: function (el) {
+            destroy: function(el) {
                 var i,
                     parallaxElement = $(el).data('px.parallax');
                 parallaxElement.$mirror.remove();
@@ -373,7 +373,7 @@ window.addEventListener('load', () => {
         // Parallax Plugin Definition
 
         function Plugin(option) {
-            return this.each(function () {
+            return this.each(function() {
                 var $this = $(this);
                 var options = typeof option == 'object' && option;
 
@@ -403,7 +403,7 @@ window.addEventListener('load', () => {
 
         // Parallax No Conflict
 
-        $.fn.parallax.noConflict = function () {
+        $.fn.parallax.noConflict = function() {
             $.fn.parallax = old;
             return this;
         };
@@ -411,7 +411,7 @@ window.addEventListener('load', () => {
 
         // Parallax Data-API
 
-        $(function () {
+        $(function() {
             $('[data-parallax="scroll"]').parallax();
         });
 
