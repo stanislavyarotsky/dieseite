@@ -20,14 +20,11 @@
             text-shadow: 0 0 10px white;
         }
     }
-    .description,
-    .description_static {
-        font-size: 1.5em;
-        letter-spacing: 1px;
-        padding: 0.3em 0.7em;
+    .description {
+        font-size: 1.2em;
         position: absolute;
-        border-radius: 2px;
         top: 70%;
+        display: flex;
         .box {
             opacity: 0;
             transform: translate(0, 50px);
@@ -69,6 +66,24 @@
     }
 }
 
+@media only screen and (max-width: 768px) {
+    #home {
+        div:nth-of-type(2) {
+            margin-top: -70px;
+        }
+        h1 {
+            font-size: 1.8em !important;
+            span {
+                font-size: 0.5em !important;
+            }
+        }
+        .description {
+            border-radius: 0;
+            font-size: 1.1rem;
+        }
+    }
+}
+
 @media only screen and (max-width: 579px) {
     #home {
         div:nth-of-type(2) {
@@ -82,7 +97,7 @@
         }
         .description {
             border-radius: 0;
-            font-size: 1rem;
+            font-size: 1.2rem;
         }
     }
 }

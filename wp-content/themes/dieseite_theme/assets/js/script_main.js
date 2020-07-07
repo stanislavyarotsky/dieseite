@@ -6,10 +6,11 @@ $(document).ready(function() {
             scrollTop: $(target)
                 .offset()
                 .top
-        }, 1000);
+        }, 2000);
         return false;
     });
 });
+
 
 //scrollSpy function
 window.addEventListener('load', () => {
@@ -183,39 +184,38 @@ window.addEventListener('load', () => {
 })
 
 //read more drop - down
-window.addEventListener('load', () => {
-    document.addEventListener('DOMContentLoaded', () => {
-        let showAllPojects = document.querySelector('.read-more-toggle');
-        let closeAllProjects = document.querySelector('.closeWerke');
-        showAllPojects.addEventListener('click', () => {
-            showAllPojects
-                .nextElementSibling
-                .classList
-                .toggle('show');
-            showAllPojects
-                .classList
-                .toggle('active');
-            showAllPojects
-                .lastElementChild
-                .classList
-                .toggle('active');
-        });
-        closeAllProjects.addEventListener('click', () => {
-            closeAllProjects
-                .classList
-                .remove('active');
-            closeAllProjects
-                .closest('.read-more-content')
-                .classList
-                .remove('show');
-            showAllPojects
-                .classList
-                .remove('active');
-            showAllPojects
-                .lastElementChild
-                .classList
-                .remove('active');
-        })
+
+document.addEventListener('DOMContentLoaded', () => {
+    let showAllPojects = document.querySelector('.read-more-toggle');
+    let closeAllProjects = document.querySelector('.closeWerke');
+    showAllPojects.addEventListener('click', () => {
+        showAllPojects
+            .nextElementSibling
+            .classList
+            .toggle('show');
+        showAllPojects
+            .classList
+            .toggle('active');
+        showAllPojects
+            .lastElementChild
+            .classList
+            .toggle('active');
+    });
+    closeAllProjects.addEventListener('click', () => {
+        closeAllProjects
+            .classList
+            .remove('active');
+        closeAllProjects
+            .closest('.read-more-content')
+            .classList
+            .remove('show');
+        showAllPojects
+            .classList
+            .remove('active');
+        showAllPojects
+            .lastElementChild
+            .classList
+            .remove('active');
     })
 })
 
@@ -232,54 +232,52 @@ $(document).ready(function() {
 
 });
 
-//type it filter gallery
-window.addEventListener('load', () => {
-    filterSelection("all")
+//filter gallery
+filterSelection("all")
 
-    function filterSelection(c) {
-        let x,
-            i;
-        x = document.getElementsByClassName("werk");
-        if (c == "all")
-            c = "";
-        for (i = 0; i < x.length; i++) {
-            w3RemoveClass(x[i], "show");
-            if (x[i].className.indexOf(c) > -1)
-                w3AddClass(x[i], "show");
+function filterSelection(c) {
+    let x,
+        i;
+    x = document.getElementsByClassName("werk");
+    if (c == "all")
+        c = "";
+    for (i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1)
+            w3AddClass(x[i], "show");
+    }
+}
+
+function w3AddClass(element, name) {
+    let i,
+        arr1,
+        arr2;
+    arr1 = element
+        .className
+        .split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {
+            element.className += " " + arr2[i];
         }
     }
+}
 
-    function w3AddClass(element, name) {
-        let i,
-            arr1,
-            arr2;
-        arr1 = element
-            .className
-            .split(" ");
-        arr2 = name.split(" ");
-        for (i = 0; i < arr2.length; i++) {
-            if (arr1.indexOf(arr2[i]) == -1) {
-                element.className += " " + arr2[i];
-            }
+function w3RemoveClass(element, name) {
+    let i,
+        arr1,
+        arr2;
+    arr1 = element
+        .className
+        .split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
         }
     }
-
-    function w3RemoveClass(element, name) {
-        let i,
-            arr1,
-            arr2;
-        arr1 = element
-            .className
-            .split(" ");
-        arr2 = name.split(" ");
-        for (i = 0; i < arr2.length; i++) {
-            while (arr1.indexOf(arr2[i]) > -1) {
-                arr1.splice(arr1.indexOf(arr2[i]), 1);
-            }
-        }
-        element.className = arr1.join(" ");
-    }
-})
+    element.className = arr1.join(" ");
+}
 
 //add, toggle, remove
 window.addEventListener('load', () => {
@@ -400,6 +398,26 @@ window.addEventListener('load', () => {
         })
     });
 })
+
+//auto-typing fx
+
+// $(document).ready(function() {
+//     var offset = 900;
+//     $(window).scroll(function() {
+//         var scrolltop = $(this).scrollTop();
+//         $('.auto-typing').each(function() {
+//             if (scrolltop >= $(this).offset().top - offset) {
+//                 $(function() {
+//                     new
+//                     TypeIt('.auto-typing', { speed: 45 });
+//                 });
+//                 $(window).off('scroll');
+//             }
+//         });
+//     });
+// });
+
+
 
 // let btnContact = document.querySelector('#myForm
 // .btn').addEventListener('click', (e) => {     e.preventDefault(); });
