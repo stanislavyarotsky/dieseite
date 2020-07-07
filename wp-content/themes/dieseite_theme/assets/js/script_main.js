@@ -6,7 +6,7 @@ $(document).ready(function() {
             scrollTop: $(target)
                 .offset()
                 .top
-        }, 2000);
+        }, 1200);
         return false;
     });
 });
@@ -50,6 +50,7 @@ window.addEventListener('load', () => {
 window.addEventListener('load', () => {
     let boxes = document.querySelectorAll('.description .box');
     let x = 0;
+
     let func = () => {
         boxes.forEach((box) => {
             let boxT = Math.floor(box.getBoundingClientRect().top);
@@ -142,7 +143,9 @@ window.addEventListener('load', () => {
 
 //parallax anm mode fx
 $(document).ready(function() {
+
     $(window).scroll(function() {
+
         $(".anm_mod").each(function() {
             const position = $(this)
                 .offset()
@@ -156,8 +159,13 @@ $(document).ready(function() {
                 $(this).removeClass("active");
             }
         });
+
     });
 });
+
+
+
+
 
 //style werke
 window.addEventListener('load', () => {

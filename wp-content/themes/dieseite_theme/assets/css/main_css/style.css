@@ -403,8 +403,10 @@ span.eye {
   #home .description {
     font-size: 1.2em;
     position: absolute;
-    top: 70%;
-    display: flex; }
+    top: 67%;
+    letter-spacing: 1.62px;
+    display: flex;
+    text-transform: uppercase; }
     #home .description .box {
       opacity: 0;
       transform: translate(0, 50px);
@@ -429,7 +431,7 @@ span.eye {
       color: var(--eis) !important;
       transition: 0.3s ease-in-out; }
     #home #arrow-down.active {
-      transform: translate(-50%, 0); }
+      transform: translate(-50%, -25px); }
     #home #arrow-down i {
       content: '\f0a8';
       font-family: 'FontAwesome';
@@ -447,7 +449,8 @@ span.eye {
       font-size: 0.5em !important; }
   #home .description {
     border-radius: 0;
-    font-size: 1.1rem; } }
+    font-size: 1.1rem;
+    flex-direction: column; } }
 @media only screen and (max-width: 579px) {
   #home div:nth-of-type(2) {
     margin-top: -70px; }
@@ -460,8 +463,10 @@ span.eye {
     font-size: 1.2rem; } }
 #was .info-box {
   box-shadow: var(--shad2);
-  width: 800px;
-  color: var(--dark); }
+  width: 700px;
+  color: var(--dark);
+  padding: 2.5em 1.3em !important;
+  border-radius: 3px; }
   #was .info-box h3 {
     color: var(--feuer);
     margin-bottom: 0.5em; }

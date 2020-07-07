@@ -17,9 +17,7 @@ get_header(); ?>
             </h1>
             <span class="description">
                 <?php if (have_rows('description')) : while (have_rows('description')) : the_row(); ?>
-                <div class="d-flex justify-content-around">
                     <div class="box"><?php the_sub_field('description_item'); ?></div>
-                </div>
                 <?php endwhile;
                         endif; ?>
             </span>
@@ -58,7 +56,7 @@ endif; ?>
         <!--info-box-->
         <?php if (have_rows('section_was_contact_link')) : while (have_rows('section_was_contact_link')) : the_row(); ?>
         <div
-            class="position-relative w-100 d-flex flex-column flex-lg-row justify-content-center mt-5 p-3 active">
+            class="position-relative w-100 d-flex flex-column flex-lg-row justify-content-center mt-5 p-5 active">
             <h3 class="auto-typing text-center text-lg-left"><?php the_sub_field('section_was_contact_link_text'); ?></h3>
             <a class="btn_href smooth_scroll btn ml-0 ml-lg-5 mt-1 mt-lg-0" href="#kontakt"><?php the_sub_field('section_was_contact_link_text_button'); ?></a>
         </div>

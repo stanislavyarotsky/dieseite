@@ -23,8 +23,10 @@
     .description {
         font-size: 1.2em;
         position: absolute;
-        top: 70%;
+        top: 67%;
+        letter-spacing: 1.62px;
         display: flex;
+        text-transform: uppercase;
         .box {
             opacity: 0;
             transform: translate(0, 50px);
@@ -53,7 +55,7 @@
             transition: 0.3s ease-in-out;
         }
         &.active {
-            transform: translate(-50%, 0);
+            transform: translate(-50%, -25px);
         }
         i {
             content: '\f0a8';
@@ -80,6 +82,7 @@
         .description {
             border-radius: 0;
             font-size: 1.1rem;
+            flex-direction: column;
         }
     }
 }
