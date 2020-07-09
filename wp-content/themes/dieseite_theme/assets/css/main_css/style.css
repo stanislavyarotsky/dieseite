@@ -674,7 +674,7 @@ span.eye {
   margin: 0 auto;
   color: var(--grayDark);
   font-weight: 500;
-  padding: 30px 15px;
+  padding: 2.5em 1.3em;
   box-shadow: var(--shad2); }
   #myForm .btn {
     background-color: var(--btn);
